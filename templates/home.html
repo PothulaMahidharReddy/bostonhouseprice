@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .login { width: 400px; margin: auto; }
+    input, button { width: 100%; padding: 10px; margin: 5px 0; }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Boston House Price Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required />
+      <input type="text" name="ZN" placeholder="ZN" required />
+      <input type="text" name="INDUS" placeholder="INDUS" required />
+      <input type="text" name="CHAS" placeholder="CHAS" required />
+      <input type="text" name="NOX" placeholder="NOX" required />
+      <input type="text" name="RM" placeholder="RM" required />
+      <input type="text" name="AGE" placeholder="AGE" required />
+      <input type="text" name="DIS" placeholder="DIS" required />
+      <input type="text" name="RAD" placeholder="RAD" required />
+      <input type="text" name="TAX" placeholder="TAX" required />
+      <input type="text" name="PTRATIO" placeholder="PTRATIO" required />
+      <input type="text" name="B" placeholder="B" required />
+      <input type="text" name="LSTAT" placeholder="LSTAT" required />
+      <button type="submit">Predict</button>
+    </form>
+    <br>
+    <h3>{{ prediction_text }}</h3>
+  </div>
+</body>
+</html>
